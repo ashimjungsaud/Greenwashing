@@ -1,4 +1,5 @@
 import React, { useContext, createContext } from "react";
+import { daysLeft } from "../utils";
 
 import {
   useAddress,
@@ -47,6 +48,7 @@ export const StateContextProvider = ({ children }) => {
   // };
 
   const publishCampaign = async (form) => {
+    
     try {
       const data = await contract.call(
         "createCampaign",
@@ -64,21 +66,23 @@ export const StateContextProvider = ({ children }) => {
   };
 
   const getCampaigns = async () => {
-    
+
     const campaigns = await contract.call("getCampaigns");
 
-    const parsedCampaings = campaigns.map((campaign, i) => ({
-      owner: campaign.owner,
-      title: campaign.title,
-      description: campaign.description,
-      target: ethers.utils.formatEther(campaign.target.toString()),
-      deadline: campaign.deadline.toNumber(),
-      amountCollected: ethers.utils.formatEther(
-        campaign.amountCollected.toString()
-      ),
-      image: campaign.image,
-      pId: i,
-    }));
+    const parsedCampaings = campaigns
+      //.filter((campaign, i) => daysLeft(campaign.deadline) < 0)
+      .map((campaign, i) => ({
+        owner: campaign.owner,
+        title: campaign.title,
+        description: campaign.description,
+        target: ethers.utils.formatEther(campaign.target.toString()),
+        deadline: campaign.deadline.toNumber(),
+        amountCollected: ethers.utils.formatEther(
+          campaign.amountCollected.toString()
+        ),
+        image: campaign.image,
+        pId: i,
+      }));
 
     return parsedCampaings;
   };
