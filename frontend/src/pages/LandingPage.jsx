@@ -10,10 +10,10 @@ function LandingPage() {
     return (
         <div>
             <div className="h-screen  w-full relative">
-                <img src={Greenwashing} className="w-full h-screen  object-cover
+                <img src={Greenwashing} className="w-full h-screen  object-cover      
                 absolute mix-blend-overlay"/>
                 <HomeNavbar />
-                <About />
+                <About />   
             </div>
             <div>
                 <ContentSection1 img = {img1} heading ="What is Greenwashing ?" para ="Greenwashing isn't about cleaning your lawn—it's about misleading marketing. Companies use it to make you think their products are environmentally friendly when they aren't."/>  
