@@ -1,5 +1,4 @@
 import React, { useContext, createContext } from "react";
-import { daysLeft } from "../utils";
 
 import {
   useAddress,
@@ -7,10 +6,10 @@ import {
   useMetamask,
   useContractWrite,
 } from "@thirdweb-dev/react";
-
 import { ethers } from "ethers";
 import { EditionMetadataWithOwnerOutputSchema } from "@thirdweb-dev/sdk";
 import contractABI from "./abi.json";
+import { daysLeft } from "../utils";
 
 const StateContext = createContext();
 
@@ -26,7 +25,7 @@ export const StateContextProvider = ({ children }) => {
 
   const address = useAddress();
   const connect = useMetamask();
-  console.log(connect);
+  //console.log(contract);
 
   // const publishCampaign = async (form) => {
   //   try {
@@ -48,7 +47,6 @@ export const StateContextProvider = ({ children }) => {
   // };
 
   const publishCampaign = async (form) => {
-    
     try {
       const data = await contract.call(
         "createCampaign",
@@ -66,11 +64,10 @@ export const StateContextProvider = ({ children }) => {
   };
 
   const getCampaigns = async () => {
-
     const campaigns = await contract.call("getCampaigns");
 
     const parsedCampaings = campaigns
-      //.filter((campaign, i) => daysLeft(campaign.deadline) < 0)
+      .filter((campaign) => daysLeft(campaign.deadline.toNumber()) > 0)
       .map((campaign, i) => ({
         owner: campaign.owner,
         title: campaign.title,
@@ -82,7 +79,17 @@ export const StateContextProvider = ({ children }) => {
         ),
         image: campaign.image,
         pId: i,
-      }));
+      }))
+      .filter(
+        (campaign, index, self) =>
+          index ===
+          self.findIndex(
+            (c) =>
+              c.owner === campaign.owner &&
+              c.title === campaign.title &&
+              c.description === campaign.description
+          )
+      );
 
     return parsedCampaings;
   };
