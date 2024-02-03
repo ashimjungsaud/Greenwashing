@@ -17,7 +17,7 @@ const CampaignDetails = () => {
   const [amount, setAmount] = useState('');
   const [donators, setDonators] = useState([]);
 
-  const remainingDays = daysLeft(state.deadline);
+  const remainingDays =  1
 
   const fetchDonators = async () => {
     const data = await getDonations(state.pId);
@@ -60,7 +60,7 @@ const CampaignDetails = () => {
             </div>
 
             <div className="flex md:w-[150px] w-full flex-wrap justify-between gap-[30px]">
-              <CountBox title="Days Left" value={remainingDays} />
+              <CountBox title="Total Likes" value={remainingDays} />
               <CountBox title={`Raised of ${state.target}`} value={state.amountCollected} />
               <CountBox title="Total Backers" value={donators.length} />
             </div>
