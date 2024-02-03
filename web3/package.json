@@ -6,10 +6,13 @@
     "release": "npx thirdweb@latest release"
   },
   "devDependencies": {
-    "hardhat": "^2.10.1"
+    "@matterlabs/hardhat-zksync-solc": "^0.3.17",
+    "hardhat": "^2.13.0"
   },
   "dependencies": {
-    "@thirdweb-dev/contracts": "^3",
-    "dotenv": "^16.0.3"
+    "@thirdweb-dev/contracts": "^3.8.0",
+    "chai": "^4.4.1",
+    "chai-as-promised": "^7.1.1",
+    "zksync-web3": "^0.14.3"
   }
 }
