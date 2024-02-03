@@ -5,7 +5,7 @@ import { Greenwashing } from '../assets';
 
 function LandingPage() {
     return (
-        <div className="h-[800px] w-full relative">
+        <div className="h-auto w-full relative">
             <img src={Greenwashing} className="w-full h-screen object-cover absolute mix-blend-overlay"/>
             <HomeNavbar />
             <About />

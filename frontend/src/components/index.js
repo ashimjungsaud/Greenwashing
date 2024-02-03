@@ -8,3 +8,5 @@ export { default as CountBox } from './CountBox';
 export { default as Loader } from './Loader';
 export { default as About } from './About';
 export { default as HomeNavbar} from './HomeNavbar';
+export { default as Upvote} from './Upvote';
+export { default as DownVote} from './DownVote';
