@@ -23,6 +23,7 @@ module.exports = {
       'color-4': '#B2C582',
       'color-5': '#D5DDDF',
       'color-6': '#F5F1DE',
+      'color-7': '#E0ECDE',
       'white': '#FFFFFF',
       'black': '#000000',
       'gray': '#808191',
