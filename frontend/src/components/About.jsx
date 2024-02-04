@@ -3,12 +3,14 @@ import React from "react";
 function About() {
     return (
         <>
-            <div className="p-2 md:p-10 md:py-24">
-                <h1 className="flex justify-center text-color-5 opacity-100 font-semibold text-6xl">
-                    Greenwashing
+            <div className="p-2 md:p-10">
+                <h1 className="flex justify-start text-white opacity-100 font-bold text-6xl font-epilogue">
+                    Green Washing
                 </h1>
-                <p className="text-gray-200 text-color-5 text-xl text-center">
-                    The Deceptive Tactics Behind Environmental Claims
+                <p className="flex justify-start text-gray-200 text-white text-2xl font-lg font-serif pt-2">
+                    The Deceptive Tactics 
+                    <br/>
+                    Behind Environmental Claims
                 </p>
             </div>
         </>

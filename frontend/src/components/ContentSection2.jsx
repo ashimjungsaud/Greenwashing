@@ -1,6 +1,6 @@
 const ContentSection2 = ({img,heading,para}) => {
     return ( 
-        <div className='w-full px-4'> 
+        <div className='w-full px-4' id="Information"> 
             <div className='max-w-[1240px] mx-auto grid md:grid-cols-2'>   
                 <div className='py-10  left-5 flex flex-col flex-wrap-reverse justify-center text-center md:text-right'>    
                     <h1 className='md:text-4xl sm:text-3xl text-2xl font-bold py-4'>{heading}</h1>

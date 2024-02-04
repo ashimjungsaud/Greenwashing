@@ -96,7 +96,7 @@ const CreateCampaign = () => {
                 className="w-[40px] h-[40px] object-contain"
               />
               <h4 className="font-epilogue font-bold text-[25px] text-white ml-[20px]">
-                We are here to Support you on your Journey of Eradicating
+                We are here to support you on your Journey of Eradicating
                 GreenWashing
               </h4>
             </div>

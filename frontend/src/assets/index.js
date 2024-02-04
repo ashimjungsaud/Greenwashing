@@ -16,6 +16,11 @@ import Greenwashing from "./Greenwashing.png";
 import img1 from "../assets/image1.avif";
 import img2 from "../assets/img2.png";
 import img3 from "../assets/img3.png";
+import gw from "../assets/gw.jpeg";
+import mainLogo from '../assets/mainLogo.png';
+import BlackLogo from '../assets/BlackLogo.png';
+import GreenLogo from '../assets/GreenLogo.png';
+
 export {
   tagType,
   createCampaign,
@@ -35,4 +40,8 @@ export {
   img1,
   img2,
   img3,
+  gw,
+  mainLogo,
+  BlackLogo,
+  GreenLogo,
 };
